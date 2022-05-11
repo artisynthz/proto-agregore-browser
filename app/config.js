@@ -60,12 +60,12 @@ module.exports = require('rc')('agregore', {
   ssbOptions: {},
   // All options here: https://github.com/webtorrent/webtorrent/blob/master/docs/api.md
   btOptions: {
-    storageLocation: DEFAULT_BT_DIR
+    folder: DEFAULT_BT_DIR
   },
   // All options here: https://gun.eco/docs/API#-a-name-gun-a-gun-options-
   gunOptions: {
     file: DEFAULT_GUN_DIR,
     radisk: true,
-    relay: false
+    relay: true
   }
 })
