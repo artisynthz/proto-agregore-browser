@@ -65,7 +65,7 @@ function registerPrivileges () {
     { scheme: 'gemini', privileges: P2P_PRIVILEGES },
     { scheme: 'ipfs', privileges: P2P_PRIVILEGES },
     { scheme: 'ipns', privileges: P2P_PRIVILEGES },
-    { scheme: 'bittorrent', privileges: P2P_PRIVILEGES },
+    { scheme: 'bt', privileges: P2P_PRIVILEGES },
     { scheme: 'gun', privileges: P2P_PRIVILEGES },
     { scheme: 'ssb', privileges: P2P_PRIVILEGES },
     { scheme: 'agregore', privileges: BROWSER_PRIVILEGES },
@@ -83,7 +83,7 @@ async function setupProtocols (session) {
   app.setAsDefaultProtocolClient('gemini')
   app.setAsDefaultProtocolClient('ipfs')
   app.setAsDefaultProtocolClient('ipns')
-  app.setAsDefaultProtocolClient('bittorrent')
+  app.setAsDefaultProtocolClient('bt')
   app.setAsDefaultProtocolClient('gun')
 
   const browserProtocolHandler = await createBrowserHandler()
@@ -109,8 +109,8 @@ async function setupProtocols (session) {
   globalProtocol.registerStreamProtocol('ipns', ipfsProtocolHandler)
 
   const btHandler = await createBTHandler(btOptions, session)
-  sessionProtocol.registerStreamProtocol('bittorrent', btHandler)
-  globalProtocol.registerStreamProtocol('bittorrent', btHandler)
+  sessionProtocol.registerStreamProtocol('bt', btHandler)
+  globalProtocol.registerStreamProtocol('bt', btHandler)
 
   const magnetHandler = await createMagnetHandler()
   sessionProtocol.registerStreamProtocol('magnet', magnetHandler)

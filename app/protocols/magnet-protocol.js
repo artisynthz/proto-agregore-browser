@@ -14,18 +14,18 @@ module.exports = async function createHandler () {
       if (xs) {
         const match = PUBLIC_KEY_MATCH.exec(xs)
         if (!match) {
-          return sendError('Magnet has no bittorrent infohash')
+          return sendError('Magnet has no bt infohash')
         }
         const publicKey = match[1]
-        const final = `bittorrent://${publicKey}`
+        const final = `bt://${publicKey}`
         sendFinal(final)
       } else if (xt) {
         const match = INFO_HASH_MATCH.exec(xt)
         if (!match) {
-          return sendError('Magnet has no bittorrent infohash')
+          return sendError('Magnet has no bt infohash')
         }
         const infohash = match[1]
-        const final = `bittorrent://${infohash}/`
+        const final = `bt://${infohash}/`
         sendFinal(final)
       } else {
         return sendError('Magnet link has no `xt` or `xs` parameter')
