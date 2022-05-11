@@ -1,5 +1,5 @@
-# Agregore Browser
-A minimal web browser for the distributed web
+# Proto Agregore Browser
+I don't have time to make my own browser, this repo is here for me to make my own changes on top of agregore and see how it works out
 
 <p align="center" style="float: right">
 	<img src="./build/icon.png" width="333px">
